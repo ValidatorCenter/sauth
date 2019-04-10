@@ -1,0 +1,26 @@
+# copy to /etc/systemd/system/
+# sudo systemctl enable sauth
+# sudo systemctl start sauth
+
+[Unit]
+Description=Minter Seed-auth
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/opt/sauth/service.pid
+User=root
+Group=root
+WorkingDirectory=/opt/sauth
+ExecStart=/opt/sauth/sauthd &
+SyslogIdentifier=sauth_m
+StandardOutput=syslog
+StandardError=syslog
+OOMScoreAdjust=-100
+TimeoutSec=10
+Restart=always
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
