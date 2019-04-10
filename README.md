@@ -6,21 +6,21 @@ Server listens to port: 3999.
 
 ### API
 
-###### New Seed-phrase
+#### New Seed-phrase
 
 GET:
 http://localhost:3999/api/v1/newMnemonic
 
 Result:
-``
+```
 {
  "status":true,
  "mnemonic":"mushroom urban cruel bone sting cash office glide impact twin finger bless",
  "err_msg":""
 }
-``
+```
 
-###### Seed-phrase authorization
+#### Seed-phrase authorization
 
 GET:
 http://localhost:3999/api/v1/authSeed?sp=mushroom%20urban%20cruel%20bone%20sting%20cash%20office%20glide%20impact%20twin%20finger%20bless
